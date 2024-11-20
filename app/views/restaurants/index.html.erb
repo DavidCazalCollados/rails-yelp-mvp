@@ -1,0 +1,8 @@
+
+<div class="list-group container mt-5">
+  <% @restaurants.each do |restaurant| %>
+  <div class="list-group-item list-group-item-action">
+    <%= link_to restaurant.name, restaurant_path(restaurant) %>
+  </div>
+  <% end %>
+</div>
