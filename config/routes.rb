@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-  resources :restaurants, only: %i[index show new create]
+  resources :restaurants, only: %i[index show new create] do
+    resources :reviews, only: [:new]
+  end
 end
