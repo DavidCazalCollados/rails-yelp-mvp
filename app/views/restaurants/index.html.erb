@@ -1,8 +1,17 @@
 
-<div class="list-group container mt-5">
+
+<div class="row mt-5">
   <% @restaurants.each do |restaurant| %>
-  <div class="list-group-item list-group-item-action">
-    <%= link_to restaurant.name, restaurant_path(restaurant) %>
+  <div class="col-sm-6 p-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= restaurant.name %></h5>
+        <h6 class="card-text"><%= restaurant.category %></h6>
+        <p class="card-text"><%= restaurant.address %></p>
+        <p class="card-text"><%= restaurant.phone_number %></p>
+        <%= link_to "<button class='btn btn-primary'>See restaurant</button>".html_safe, restaurant_path(restaurant) %>
+      </div>
+    </div>
   </div>
   <% end %>
 </div>
